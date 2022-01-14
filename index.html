@@ -216,11 +216,14 @@ Owner</h3>
     
     
     
-    
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">
     
     
     <script type="module">
-
+      screen.lockOrientation('portrait');
+      screen.addEventListener("orientationchange", function () {
+          console.log("The orientation of the screen is: " + screen.orientation);
+      });
 
   // Find the latest version by visiting https://cdn.skypack.dev/three.
 
