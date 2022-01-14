@@ -2,110 +2,141 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arno's Website</title>
     
     <style>
 
-@import url("https://use.typekit.net/jmk3xov.css");
 
-html {
+      /* width */
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
 
-  cursor: url('cursor-hand.gif'), auto;
-  orientation: portrait;
-}
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: red; 
+        border-radius: 10px;
+      }
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-
-:root {
-  --dark-bg: rgba(15, 15, 15, 0.95);
-  --spacing: 350px;
-
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-main {
-  width: 100vw;
-  color: white;
-  z-index: 99;
-  position: absolute;
-  width: 100%;
-  margin: 0px auto;
-  
-
-  
-  padding: 120px 0px;
-  
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
-
-h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b30000; 
+      }
 
 
 
-  header {
-    background: var(--dark-bg);
-    grid-column: 2 / span 5;
-    font-size: 2.5rem;
-    border-radius: 15px 50px 30px 5px;
-    border: 2px solid #e6325e;
-    padding: 20px;
-    margin-bottom: var(--spacing);
-    opacity: 0.75;
-  }
 
-  section {
-    grid-column: 2 / 8;
-    border-radius: 15px 50px 30px 5px;
-    border: 2px solid #e6325e;
-    padding: 20px;
-    background: var(--dark-bg);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-bottom: var(--spacing);
-  }
 
-  blockquote {
-    margin: 0;
-    border-radius: 15px 50px 30px 5px;
-    border: 2px solid #e6325e;
-    padding: 20px;
-    grid-column: 2 / span 9;
-    margin-bottom: var(--spacing);
-  }
 
-  blockquote p {
-    color: #4b81c2;
-    
-    font-size: 4rem;
-    display: inline;
-    line-height: 1;
-  }
 
-  .left {
-    grid-column: 6 / 12;
-  }
-</style>
+
+      @import url("https://use.typekit.net/jmk3xov.css");
+
+      html {
+
+        cursor: url('cursor-hand.gif'), auto;
+        orientation: portrait;
+      }
+
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+
+      :root {
+        --dark-bg: rgba(15, 15, 15, 0.95);
+        --spacing: 350px;
+
+        font-family: brandon-grotesque, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+
+      main {
+        width: 100vw;
+        color: white;
+        z-index: 99;
+        position: absolute;
+        width: 100%;
+        margin: 0px auto;
+        
+
+        
+        padding: 120px 0px;
+        
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      h1, h2, h3, blockquote {
+        font-family: elevon, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+
+
+      header {
+        background: var(--dark-bg);
+        grid-column: 2 / span 5;
+        font-size: 2.5rem;
+        border-radius: 15px 50px 30px 5px;
+        border: 2px solid #e6325e;
+        padding: 20px;
+        margin-bottom: var(--spacing);
+        opacity: 0.75;
+      }
+
+      section {
+        grid-column: 2 / 8;
+        border-radius: 15px 50px 30px 5px;
+        border: 2px solid #e6325e;
+        padding: 20px;
+        background: var(--dark-bg);
+        font-size: 1.25rem;
+        line-height: 1.5;
+        margin-bottom: var(--spacing);
+      }
+
+      blockquote {
+        margin: 0;
+        border-radius: 15px 50px 30px 5px;
+        border: 2px solid #e6325e;
+        padding: 20px;
+        grid-column: 2 / span 9;
+        margin-bottom: var(--spacing);
+      }
+
+      blockquote p {
+        color: #4b81c2;
+        
+        font-size: 4rem;
+        display: inline;
+        line-height: 1;
+      }
+
+      .left {
+        grid-column: 6 / 12;
+      }
+    </style>
     
     
     
