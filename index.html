@@ -496,6 +496,17 @@
             
       function moveCameraUp() {
         const t = document.body.getBoundingClientRect().top;
+        //Get the button
+        console.log("t: ", t)
+        var mybutton = document.getElementById("myBtn");
+        if (t < -500){
+          mybutton.style.display = "block";
+          console.log("show button")
+        } else {
+          mybutton.style.display = "none";
+          console.log("hide button")
+        }
+        
         moon.rotation.x += 0.05;
         moon.rotation.y += 0.075;
         moon.rotation.z += 0.05;
@@ -510,9 +521,10 @@
             
       function moveCameraDown() {
         const t = document.body.getBoundingClientRect().top;
-        if (t < -100){
-          //Get the button
-          var mybutton = document.getElementById("myBtn");
+        //Get the button
+        console.log("t: ", t)
+        var mybutton = document.getElementById("myBtn");
+        if (t < -500){
           mybutton.style.display = "block";
           console.log("show button")
         } else {
@@ -538,7 +550,7 @@
         document.documentElement.scrollTop = 0;
       }
 
-                  
+
       console.log(document.body.onscroll)
       document.body.onscroll = moveCamera;
       moveCamera();
