@@ -316,7 +316,7 @@ scene.background = spaceTexture;
 
 const jeffTexture = new THREE.TextureLoader().load('arno.jpg');
 
-const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
+const user = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
 
 scene.add(jeff);
 
@@ -338,8 +338,8 @@ scene.add(moon);
 moon.position.z = 30;
 moon.position.setX(-10);
 
-jeff.position.z = -5;
-jeff.position.x = 2;
+user.position.z = -5;
+user.position.x = 2;
 
 // Scroll Animation
 var lastScrollTop = 0;
@@ -363,8 +363,8 @@ function moveCamera() {
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
 
-  jeff.rotation.y += 0.01;
-  jeff.rotation.z += 0.01;
+  user.rotation.y += 0.01;
+  user.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
@@ -377,8 +377,8 @@ function moveCameraUp() {
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
 
-  jeff.rotation.y += 0.01;
-  jeff.rotation.z += 0.01;
+  user.rotation.y += 0.01;
+  user.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
@@ -391,8 +391,8 @@ function moveCameraDown() {
   moon.rotation.y -= 0.075;
   moon.rotation.z -= 0.05;
 
-  jeff.rotation.y -= 0.01;
-  jeff.rotation.z -= 0.01;
+  user.rotation.y -= 0.01;
+  user.rotation.z -= 0.01;
 
   camera.position.z = t * 0.01;
   camera.position.x = t * 0.0002;
