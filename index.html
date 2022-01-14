@@ -7,14 +7,13 @@
     <title>Arno's Website</title>
     
     <style>
-       @viewport {  
-   orientation: portrait;  
- } 
+
 @import url("https://use.typekit.net/jmk3xov.css");
 
 html {
 
   cursor: url('cursor-hand.gif'), auto;
+  orientation: portrait;
 }
 
 canvas {
@@ -220,7 +219,7 @@ Owner</h3>
     
     
     <script type="module">
-      screen.lockOrientation('portrait');
+      //screen.lockOrientation('portrait');
       screen.addEventListener("orientationchange", function () {
           console.log("The orientation of the screen is: " + screen.orientation);
       });
