@@ -140,6 +140,12 @@
       }
 
 
+      #quoted_by {
+        color: #4bffc2;
+        
+        font-size: 4rem;
+        text-align: right;      
+      }
 
 
 
@@ -190,7 +196,7 @@
 
 
       <blockquote>
-        <p>I like making stuff.</p>
+        <p>I like making and building stuff.</p>
       </blockquote>
 
       <section>
@@ -241,7 +247,13 @@
       </section>
 
       <blockquote>
-        <p>The best way out is always through <br>-Robert Frost</p>
+        <p>
+          The best way out is always through
+          <br>
+          <div id="quoted_by">
+          -Robert Frost
+        </div>
+        </p>
       </blockquote>
 
       <section class="left">
@@ -293,7 +305,7 @@
       </section>
 
       <blockquote>
-        <p>Thanks for visiting!</p>
+        <p>Thanks for visiting, see you again soon!</p>
       </blockquote>
 
 
@@ -506,7 +518,7 @@
           mybutton.style.display = "none";
           console.log("hide button")
         }
-        
+
         moon.rotation.x += 0.05;
         moon.rotation.y += 0.075;
         moon.rotation.z += 0.05;
