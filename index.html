@@ -342,22 +342,54 @@ jeff.position.z = -5;
 jeff.position.x = 2;
 
 // Scroll Animation
+var lastScrollTop = 0;
 
-function moveCamera() {
+// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+element.addEventListener("body", function(){ // or window.addEventListener("scroll"....
+   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+   if (st > lastScrollTop){
+      // downscroll code
+     moveCameraDown()
+   } else {
+      // upscroll code
+     moveCameraUp()
+   }
+   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+      
+      
+      
+function moveCameraUp() {
   const t = document.body.getBoundingClientRect().top;
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
 
   jeff.rotation.y += 0.01;
-  jeff.rotation.z -= 0.01;
+  jeff.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
   camera.rotation.y = t * -0.0002;
 }
+      
+function moveCameraDown() {
+  const t = document.body.getBoundingClientRect().top;
+  moon.rotation.x -= 0.05;
+  moon.rotation.y -= 0.075;
+  moon.rotation.z -= 0.05;
 
-document.body.onscroll = moveCamera;
+  jeff.rotation.y -= 0.01;
+  jeff.rotation.z -= 0.01;
+
+  camera.position.z = t * 0.01;
+  camera.position.x = t * 0.0002;
+  camera.rotation.y = t * 0.0002;
+}
+      
+      
+      
+//document.body.onscroll = moveCamera;
 moveCamera();
 
 // Animation Loop
