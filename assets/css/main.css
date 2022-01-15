@@ -29,7 +29,7 @@
 
       html {
 
-        cursor: url('cursor-hand.gif'), auto;
+        /*cursor: url('cursor-hand.gif'), auto;*/
         orientation: landscape;
         overflow-x: hidden;
       }

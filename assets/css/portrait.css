@@ -1,6 +1,6 @@
-/*@viewport {  
+@viewport {  
    orientation: portrait;  
-} */
+}
 
  @media screen and (orientation:portrait) {
    orientation: landscape;

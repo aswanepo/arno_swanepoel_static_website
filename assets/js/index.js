@@ -89,12 +89,12 @@
 
       // Background
 
-      const spaceTexture = new THREE.TextureLoader().load('space_4.jpg');
+      const spaceTexture = new THREE.TextureLoader().load('assets/images/space_4.jpg');
       scene.background = spaceTexture;
 
       // Avatar
 
-      const user_pic_Texture = new THREE.TextureLoader().load('arno.jpg');
+      const user_pic_Texture = new THREE.TextureLoader().load('assets/images/arno.jpg');
 
       const user_pic = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: user_pic_Texture }));
 
@@ -102,8 +102,8 @@
 
       // Moon
 
-      const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-      const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+      const moonTexture = new THREE.TextureLoader().load('assets/images/moon.jpg');
+      const normalTexture = new THREE.TextureLoader().load('assets/images/normal.jpg');
 
       const moon = new THREE.Mesh(
         new THREE.SphereGeometry(3, 32, 32),
@@ -235,7 +235,7 @@
 
 
 
-    //Declare three.js variables
+  //Declare three.js variables
   var stars=[];
 
 
@@ -290,7 +290,7 @@
 
     //render the scene
     renderer.render( scene, camera );
-      animateStars();
+    animateStars();
 
   }
   
@@ -298,9 +298,7 @@
   addSphere();
   render();
 
-
-
-      animate();
+  animate();
 
 
 
