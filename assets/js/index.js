@@ -90,8 +90,8 @@
 
       // Background
 
-      const spaceTexture = new THREE.TextureLoader().load('assets/images/space_4.jpg');
-      scene.background = spaceTexture;
+      //const spaceTexture = new THREE.TextureLoader().load('assets/images/space_4.jpg');
+      //scene.background = spaceTexture;
 
 
 
