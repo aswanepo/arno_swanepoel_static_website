@@ -44,12 +44,12 @@
         controls.maxDistance = 1500;
         
         let materialArray = [];
-        let texture_ft = new THREE.TextureLoader().load( 'skybox_front.png');
-        let texture_bk = new THREE.TextureLoader().load( 'skybox_back.png');
-        let texture_up = new THREE.TextureLoader().load( 'skybox_up.png');
-        let texture_dn = new THREE.TextureLoader().load( 'skybox_down.png');
-        let texture_rt = new THREE.TextureLoader().load( 'skybox_right.png');
-        let texture_lf = new THREE.TextureLoader().load( 'skybox_left.png');
+        let texture_ft = new THREE.TextureLoader().load( 'assets/images/skybox_front.png');
+        let texture_bk = new THREE.TextureLoader().load( 'assets/images/skybox_back.png');
+        let texture_up = new THREE.TextureLoader().load( 'assets/images/skybox_up.png');
+        let texture_dn = new THREE.TextureLoader().load( 'assets/images/skybox_down.png');
+        let texture_rt = new THREE.TextureLoader().load( 'assets/images/skybox_right.png');
+        let texture_lf = new THREE.TextureLoader().load( 'assets/images/skybox_left.png');
           
         materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
         materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
