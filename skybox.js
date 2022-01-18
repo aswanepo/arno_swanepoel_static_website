@@ -52,10 +52,10 @@
         let texture_lf = new THREE.TextureLoader().load( 'assets/images/skybox_left.png');
           
         materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_rt }));
         materialArray.push(new THREE.MeshBasicMaterial( { map: texture_up }));
         materialArray.push(new THREE.MeshBasicMaterial( { map: texture_dn }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_rt }));
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
         materialArray.push(new THREE.MeshBasicMaterial( { map: texture_lf }));
    
         for (let i = 0; i < 6; i++)
