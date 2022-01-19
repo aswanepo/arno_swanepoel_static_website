@@ -13,12 +13,27 @@
     <link rel="stylesheet" media="all and (orientation:portrait)" href="assets/css/portrait.css">
     
     <title>Arno's Website</title>
+    <style type="text/css">
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
 
     <canvas id="bg"></canvas>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>   
+
+<p>Focus the IFrame first (e.g. by clicking in it), then try pressing some keys.</p>
+<p id="log"></p>
+    
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+
+        
 
     <main>
       <header>
@@ -795,8 +810,12 @@
     
     <!--script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" integrity="sha512-yNJzAsg5JyP91u+sLHlUDULMBd3hmEiVkYeeN1cQBKaLZ7EyT6oH2u5THNIRM2Fu6VKcZJv+F/QAp1h/qzy9Ow==" crossorigin="anonymous"></script-->
     <script src="assets/js/top_function.js"></script>
-    <script type="module" src="assets/js/index.js">
+    <script type="module" src="assets/js/main.js">
     </script>
+    <script type="module" src="assets/js/skybox.js"></script>
+    <script>
 
+
+    </script>
   </body>
 </html>

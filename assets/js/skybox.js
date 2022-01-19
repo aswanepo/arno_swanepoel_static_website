@@ -1,61 +1,95 @@
-      screen.orientation.lock('landscape');
-      //screen.lockOrientation('portrait');
-      //screen.addEventListener("orientationchange", function () {
-      //    console.log("The orientation of the screen is: " + screen.orientation);
-      //});
 
-      // Find the latest version by visiting https://cdn.skypack.dev/three.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.136.0-4Px7Kx1INqCFBN0tXUQc/mode=imports/optimized/three.js';
       //import * as GLTFLoader from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js';
-      //import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three-orbitcontrols@2.110.3/OrbitControls.js';
+      //import { OrbitControls } from 'https://cdn.skypack.dev/three-orbit-controls';
       import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
 
-      const scene = new THREE.Scene();
-      //const gltfLoader = new THREE.GLTFLoader();
-
-
-      /*function addScript(src) {
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.src = src;
-        document.getElementsByTagName('head')[0].appendChild(s);
-        return s;  // to remove it later
-      }
-
-            //addScript("https://cdn.skypack.dev/pin/three@v0.136.0-4Px7Kx1INqCFBN0tXUQc/mode=imports/optimized/three.js")
-            //addScript("https://cdn.skypack.dev/pin/three@v0.136.0-4Px7Kx1INqCFBN0tXUQc/mode=imports/optimized/three.js/examples/jsm/controls/OrbitControls.js")
-      addScript("./index.js")
-      */
 
 
 
 
+      let scene, camera;
+
+      function init() {
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,25,30000);
+        //camera.position.set(-900,-200,-900);
+
+        //renderer = new THREE.WebGLRenderer({antialias:true});
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.querySelector('#bg'),
+        });
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth,window.innerHeight);
+        camera.position.setZ(30);
+        camera.position.setX(30);
+        camera.position.set( 10, 2, 10 );
+        
+        camera.lookAt( new THREE.Vector3( 0, 2, 0 ) );
+        //document.body.appendChild(renderer.domElement);
+
+        let controls = new OrbitControls( camera, renderer.domElement );
+
+        //let controls = new THREE.OrbitControls(camera);
+        controls.addEventListener('change', renderer);
+        //controls.minDistance = 500;
+        //controls.maxDistance = 1500;
+        
+        // Skybox
+        let materialArray = [];
+        let texture_bk = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_front.png');
+        let texture_ft = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_back1.png');
+        let texture_up = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_up.png');
+        let texture_dn = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_down.png');
+        let texture_lf = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_right.png');
+        let texture_rt = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_left.png');
+          
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_lf }));
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_rt }));
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_up }));
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_dn }));
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
+        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
+        
+        // invert cube images
+        for (let i = 0; i < 6; i++)
+           materialArray[i].side = THREE.BackSide;
+        let skyboxGeo = new THREE.BoxGeometry( 10000, 10000, 10000);
+        let skybox = new THREE.Mesh( skyboxGeo, materialArray );
+        scene.add( skybox );  
 
 
 
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-      const renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector('#bg'),
-      });
-
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.position.setZ(30);
-      camera.position.setX(-3);
-
-      renderer.render(scene, camera);
 
       // Torus
 
-      const geometry = new THREE.TorusGeometry(5, 0.5, 7, 6);
+      const geometry = new THREE.TorusGeometry(25, 2, 7, 6);
       const material = new THREE.MeshStandardMaterial({ color: 0x4b81c2 });
       const torus = new THREE.Mesh(geometry, material);
 
       scene.add(torus);
-      torus.position.z = -5;
-      torus.position.x = 1.5;
+      torus.position.z = -55;
+      torus.position.x = 25;
+
 
       // Lights
 
@@ -71,10 +105,12 @@
       // const gridHelper = new THREE.GridHelper(200, 50);
       // scene.add(lightHelper, gridHelper)
 
+
+
       // const controls = new OrbitControls(camera, renderer.domElement);
 
       function addStar() {
-        const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+        const geometry = new THREE.SphereGeometry(0.15, 100, 100);
         const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
         const star = new THREE.Mesh(geometry, material);
 
@@ -96,63 +132,11 @@
 
 
 
-
-
-
-
-        let controls = new OrbitControls( camera, renderer.domElement );
-
-        //let controls = new THREE.OrbitControls(camera);
-        controls.addEventListener('change', renderer);
-        controls.minDistance = 500;
-        controls.maxDistance = 1500;
-        
-        let materialArray = [];
-        let texture_ft = new THREE.TextureLoader().load( 'assets/images/skybox_front.png');
-        let texture_bk = new THREE.TextureLoader().load( 'assets/images/skybox_back.png');
-        let texture_up = new THREE.TextureLoader().load( 'assets/images/skybox_up.png');
-        let texture_dn = new THREE.TextureLoader().load( 'assets/images/skybox_down.png');
-        let texture_rt = new THREE.TextureLoader().load( 'assets/images/skybox_right.png');
-        let texture_lf = new THREE.TextureLoader().load( 'assets/images/skybox_left.png');
-          
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_up }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_dn }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_rt }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_lf }));
-   
-        for (let i = 0; i < 6; i++)
-           materialArray[i].side = THREE.BackSide;
-        let skyboxGeo = new THREE.BoxGeometry( 10000, 10000, 10000);
-        let skybox = new THREE.Mesh( skyboxGeo, materialArray );
-        scene.add( skybox );  
-        //animate();
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       // Avatar
 
       const user_pic_Texture = new THREE.TextureLoader().load('assets/images/arno.jpg');
 
-      const user_pic = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: user_pic_Texture }));
+      const user_pic = new THREE.Mesh(new THREE.BoxGeometry(20, 20, 20), new THREE.MeshBasicMaterial({ map: user_pic_Texture }));
 
       scene.add(user_pic);
 
@@ -162,7 +146,7 @@
       const normalTexture = new THREE.TextureLoader().load('assets/images/normal.jpg');
 
       const moon = new THREE.Mesh(
-        new THREE.SphereGeometry(3, 32, 32),
+        new THREE.SphereGeometry(30, 32, 32),
         new THREE.MeshStandardMaterial({
           map: moonTexture,
           normalMap: normalTexture,
@@ -171,11 +155,12 @@
 
       scene.add(moon);
 
-      moon.position.z = 30;
-      moon.position.setX(-10);
+      moon.position.z = -60;
+      moon.position.setX(-200);
 
-      user_pic.position.z = -5;
-      user_pic.position.x = 2;
+      user_pic.position.z = -55;
+      user_pic.position.x = 25;
+
 
       // Scroll Animation
       var lastScrollTop = 0;
@@ -195,6 +180,10 @@
          lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
       }, false);
         */   
+
+      window.addEventListener( 'resize', onResize );
+
+
 
       function moveCamera() {
         console.log("scrolling: ", document.documentElement.scrollTop)
@@ -269,8 +258,58 @@
       }
 
 
+
+
+
+      const log = document.getElementById('log');
+
+      document.addEventListener('keydown', logKey);
+
+      var dir = new THREE.Vector3();
+      var speed = 1.0;
+
+      function logKey(e) {
+        log.textContent += ` ${e.code}`;
+        console.log("key = ", ` ${e.code}`);
+
+        switch (e.keyCode) {
+          case 37: // ArrowLeft
+          console.log("key = 37");
+          //camera.rotation.x = camera.position.x - 10;
+          console.log("camera.position.y: ", camera.position.y);
+          camera.rotation.y += Math.PI / 18;
+          break;
+
+          case 38: // Arrowup
+          console.log("key = 38");
+          //camera.position.z = camera.position.z - 10;
+          console.log("camera.position.z: ", camera.position.z);
+          camera.getWorldDirection( dir );
+          camera.position.addScaledVector( dir, speed );
+          break;
+
+          case 39: // ArrowRight
+          console.log("key = 39");
+          //camera.rotation.x = camera.position.x + 10;
+          console.log("camera.position.y: ", camera.position.y);
+          camera.rotation.y -= Math.PI / 18;
+          break;
+
+          case 40: // ArrowDown
+          console.log("key = 40");
+          camera.position.z = camera.position.z + 10;
+          console.log("camera.position.z: ", camera.position.z);
+          break;
+        }
+      }
+
+
+
+
+
       console.log(document.body.onscroll)
-      document.body.onscroll = moveCamera;
+      document.onscroll = moveCamera;
+      //document.onkeydown = logKey;
       moveCamera();
 
       // Animation Loop
@@ -346,6 +385,7 @@
 
     //render the scene
     renderer.render( scene, camera );
+
     animateStars();
 
   }
@@ -355,33 +395,34 @@
   render();
 
   animate();
+}
+
+
+      // function animate() {
+      //   renderer.render(scene,camera);
+      //   torus.rotation.x += 0.01;
+      //   torus.rotation.y += 0.005;
+      //   torus.rotation.z += 0.01;
+      //   requestAnimationFrame(animate);
+      // }
+
+
+      function onResize() {
+
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( w, h );
+
+      }
 
 
 
 
-
-
-      // loader.load( 'models/fbx/myModel.fbx', function ( object ) {
-
-      //     scene.add( object );
-
-      // }, undefined, function ( e ) {
-
-      //   console.error( e );
-
-      // } );
-
-
-
-
-
-
-
-
-
-
-
-
+      init();
 
 
 
