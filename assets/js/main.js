@@ -100,34 +100,34 @@
 
 
 
-        let controls = new OrbitControls( camera, renderer.domElement );
+        // let controls = new OrbitControls( camera, renderer.domElement );
 
-        //let controls = new THREE.OrbitControls(camera);
-        controls.addEventListener('change', renderer);
-        controls.minDistance = 500;
-        controls.maxDistance = 1500;
+        // //let controls = new THREE.OrbitControls(camera);
+        // controls.addEventListener('change', renderer);
+        // controls.minDistance = 500;
+        // controls.maxDistance = 1500;
         
-        let materialArray = [];
-        let texture_bk = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_front.png');
-        let texture_ft = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_back.png');
-        let texture_up = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_up.png');
-        let texture_dn = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_down.png');
-        let texture_lf = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_right.png');
-        let texture_rt = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_left.png');
+        // let materialArray = [];
+        // let texture_bk = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_front.png');
+        // let texture_ft = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_back.png');
+        // let texture_up = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_up.png');
+        // let texture_dn = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_down.png');
+        // let texture_lf = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_right.png');
+        // let texture_rt = new THREE.TextureLoader().load( 'assets/images/skybox/blue_space/skybox_left.png');
           
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_lf }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_rt }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_up }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_dn }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
-        materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
+        // materialArray.push(new THREE.MeshBasicMaterial( { map: texture_lf }));
+        // materialArray.push(new THREE.MeshBasicMaterial( { map: texture_rt }));
+        // materialArray.push(new THREE.MeshBasicMaterial( { map: texture_up }));
+        // materialArray.push(new THREE.MeshBasicMaterial( { map: texture_dn }));
+        // materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
+        // materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
    
-        for (let i = 0; i < 6; i++)
-           materialArray[i].side = THREE.BackSide;
-        let skyboxGeo = new THREE.BoxGeometry( 10000, 10000, 10000);
-        let skybox = new THREE.Mesh( skyboxGeo, materialArray );
-        scene.add( skybox );  
-        //animate();
+        // for (let i = 0; i < 6; i++)
+        //    materialArray[i].side = THREE.BackSide;
+        // let skyboxGeo = new THREE.BoxGeometry( 10000, 10000, 10000);
+        // let skybox = new THREE.Mesh( skyboxGeo, materialArray );
+        // scene.add( skybox );  
+        // //animate();
       
 
 

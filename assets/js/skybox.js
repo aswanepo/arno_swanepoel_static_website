@@ -269,8 +269,8 @@
       var speed = 1.0;
 
       function logKey(e) {
-        log.textContent += ` ${e.code}`;
-        console.log("key = ", ` ${e.code}`);
+        // log.textContent += ` ${e.code}`;
+        // console.log("key = ", ` ${e.code}`);
 
         switch (e.keyCode) {
           case 37: // ArrowLeft
@@ -395,16 +395,6 @@
   render();
 
   animate();
-}
-
-
-      // function animate() {
-      //   renderer.render(scene,camera);
-      //   torus.rotation.x += 0.01;
-      //   torus.rotation.y += 0.005;
-      //   torus.rotation.z += 0.01;
-      //   requestAnimationFrame(animate);
-      // }
 
 
       function onResize() {
@@ -418,6 +408,21 @@
         renderer.setSize( w, h );
 
       }
+
+  
+}
+
+
+      // function animate() {
+      //   renderer.render(scene,camera);
+      //   torus.rotation.x += 0.01;
+      //   torus.rotation.y += 0.005;
+      //   torus.rotation.z += 0.01;
+      //   requestAnimationFrame(animate);
+      // }
+
+
+
 
 
 
