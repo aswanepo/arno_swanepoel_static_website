@@ -186,16 +186,16 @@
 
 
       function moveCamera() {
-        console.log("scrolling: ", document.documentElement.scrollTop)
+        //console.log("scrolling: ", document.documentElement.scrollTop)
         scroll_position_now = document.documentElement.scrollTop;
-        console.log("scroll_position_now: ", scroll_position_now)
+        //console.log("scroll_position_now: ", scroll_position_now)
 
         if(scroll_position_now > scroll_position_before){
-          console.log("scroll_down: ", scroll_position_now)
+          //console.log("scroll_down: ", scroll_position_now)
           moveCameraDown()
         }
         else{
-          console.log("scroll_up: ", scroll_position_now)
+          //console.log("scroll_up: ", scroll_position_now)
           moveCameraUp()
         }
         scroll_position_before = scroll_position_now;
@@ -204,14 +204,14 @@
       function moveCameraUp() {
         const t = document.body.getBoundingClientRect().top;
         //Get the button
-        console.log("t: ", t)
+        //console.log("t: ", t)
         var mybutton = document.getElementById("myBtn");
         if (t < -500){
           mybutton.style.display = "block";
-          console.log("show button")
+          //console.log("show button")
         } else {
           mybutton.style.display = "none";
-          console.log("hide button")
+          //console.log("hide button")
         }
 
         moon.rotation.x += 0.05;
@@ -229,14 +229,14 @@
       function moveCameraDown() {
         const t = document.body.getBoundingClientRect().top;
         //Get the button
-        console.log("t: ", t)
+        //console.log("t: ", t)
         var mybutton = document.getElementById("myBtn");
         if (t < -500){
           mybutton.style.display = "block";
-          console.log("show button")
+          //console.log("show button")
         } else {
           mybutton.style.display = "none";
-          console.log("hide button")
+          //console.log("hide button")
         }
     
         moon.rotation.x += 0.05;
@@ -274,31 +274,31 @@
 
         switch (e.keyCode) {
           case 37: // ArrowLeft
-          console.log("key = 37");
+          //console.log("key = 37");
           //camera.rotation.x = camera.position.x - 10;
-          console.log("camera.position.y: ", camera.position.y);
+          //console.log("camera.position.y: ", camera.position.y);
           camera.rotation.y += Math.PI / 18;
           break;
 
           case 38: // Arrowup
-          console.log("key = 38");
+          //console.log("key = 38");
           //camera.position.z = camera.position.z - 10;
-          console.log("camera.position.z: ", camera.position.z);
+          //console.log("camera.position.z: ", camera.position.z);
           camera.getWorldDirection( dir );
           camera.position.addScaledVector( dir, speed );
           break;
 
           case 39: // ArrowRight
-          console.log("key = 39");
+          //console.log("key = 39");
           //camera.rotation.x = camera.position.x + 10;
-          console.log("camera.position.y: ", camera.position.y);
+          //console.log("camera.position.y: ", camera.position.y);
           camera.rotation.y -= Math.PI / 18;
           break;
 
           case 40: // ArrowDown
-          console.log("key = 40");
+          //console.log("key = 40");
           camera.position.z = camera.position.z + 10;
-          console.log("camera.position.z: ", camera.position.z);
+          //console.log("camera.position.z: ", camera.position.z);
           break;
         }
       }
@@ -307,7 +307,7 @@
 
 
 
-      console.log(document.body.onscroll)
+      //console.log(document.body.onscroll)
       document.onscroll = moveCamera;
       //document.onkeydown = logKey;
       moveCamera();
@@ -409,7 +409,7 @@
 
       }
 
-  
+
 }
 
 
