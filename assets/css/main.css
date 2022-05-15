@@ -137,6 +137,20 @@
         line-height: 1;
       }
 
+
+
+
+td 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+
+
+
+
+
       .left {
         grid-column: 6 / 12;
       }

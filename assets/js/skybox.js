@@ -1,26 +1,10 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.136.0-4Px7Kx1INqCFBN0tXUQc/mode=imports/optimized/three.js';
-      //import * as GLTFLoader from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js';
-      //import { OrbitControls } from 'https://cdn.skypack.dev/three-orbit-controls';
-      import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
-
+      import * as THREE from 'three';
+      
+      import { OrbitControls } from 'assets/three.js/examples/jsm/controls/OrbitControls.js';
+      // import { GLTFLoader } from 'assets/three.js/examples/jsm/loaders/GLTFLoader.js';
+      // import { RGBELoader } from 'assets/three.js/examples/jsm/loaders/RGBELoader.js';
 
 
 
