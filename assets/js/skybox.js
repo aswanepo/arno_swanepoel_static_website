@@ -2,7 +2,7 @@
 
       import * as THREE from 'three';
       
-      import { OrbitControls } from 'assets/three.js/examples/jsm/controls/OrbitControls.js';
+      import { OrbitControls } from 'assets/js/OrbitControls.js';
       // import { GLTFLoader } from 'assets/three.js/examples/jsm/loaders/GLTFLoader.js';
       // import { RGBELoader } from 'assets/three.js/examples/jsm/loaders/RGBELoader.js';
 
