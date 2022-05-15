@@ -1,8 +1,8 @@
 
 
-      import * as THREE from 'three';
+      import * as THREE from './three.module.js';
       
-      import { OrbitControls } from 'assets/js/OrbitControls.js';
+      import { OrbitControls } from './OrbitControls.js';
       // import { GLTFLoader } from 'assets/three.js/examples/jsm/loaders/GLTFLoader.js';
       // import { RGBELoader } from 'assets/three.js/examples/jsm/loaders/RGBELoader.js';
 
