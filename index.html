@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="./assets/css/smallscreen.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="./assets/css/widescreen.css">
+    <title>Arno Swanepoel · CV | CTO & Systems Engineer</title>
+    <style type="text/css">
+      /* Additional inline tweaks for CV layout */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.8rem;
+      }
+      .skill-item {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding: 0.3rem 0;
+      }
+      .skill-category {
+        font-weight: bold;
+        color: #e6325e;
+      }
+      .exp-item {
+        margin-bottom: 1.5rem;
+      }
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 0.3rem;
+      }
+      .exp-title {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      .exp-company {
+        font-weight: 600;
+        color: #4b81c2;
+      }
+      .exp-date {
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+      .exp-location {
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+      ul {
+        margin: 0.5rem 0 0 1.2rem;
+      }
+      li {
+        margin-bottom: 0.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+    <main id="main" class="main">
+      <!-- Header -->
+      <header>
+        <h1>Arno Swanepoel</h1>
+        <p>CTO & End‑to‑End Systems Engineer – Embedded | Cloud | DevOps | Industrial Automation</p>
+        <p>📍 South Africa (Remote) · 📧 arno@artilect.co.za · 🔗 github.com/arnoz · 🔗 linkedin.com/in/arnoz</p>
+        <p>🏢 Artilect Pty Ltd (Founder & CTO)</p>
+      </header>
+
+      <!-- Professional Summary -->
+      <section>
+        <h2>📄 Professional Summary</h2>
+        <p>Engineer and technology leader with <strong>20+ years</strong> of diverse experience spanning industrial automation, embedded systems architecture, full‑stack development, and DevSecOps. Currently <strong>CTO of Artilect Pty Ltd</strong>, a company focused on silicon‑to‑cloud solutions – bridging physical automation, embedded systems, and modern cloud infrastructure.</p>
+        <p>Began career in garage door automation and security systems – first as a technician at EuropeDoors, then as owner of Spiderdoors (2006–2016). Transitioned to software engineering via <strong>WeThinkCode</strong> (2016–2018), joined FastNet’s R&D lab as an intern and grew to Junior Architect, designing end‑to‑end IoT solutions. Following Telkom’s acquisition, moved to DevSecOps Engineer at BCX, building enterprise CI/CD pipelines and multi‑cloud infrastructure. Completed IBM AI coursework with practical application to edge AI contexts.</p>
+        <p>Maintains a personal hardware lab for rapid prototyping across STM32, ESP32, ARM, Nordic, and LoRa platforms. Combines practical industrial automation experience with modern software engineering and cloud architecture. Available for remote contract work, fractional CTO engagements, or long‑term partnerships.</p>
+      </section>
+
+      <!-- Technical Skills (two‑column) -->
+      <section>
+        <h2>🛠️ Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-item"><span class="skill-category">Embedded / Firmware:</span> C, STM32, ARM Cortex, Atmel, Nordic nRF, ESP32, FreeRTOS</div>
+          <div class="skill-item"><span class="skill-category">Wireless Protocols:</span> LoRa, LoRaWAN, MQTT, I2C, SPI, UART, BLE</div>
+          <div class="skill-item"><span class="skill-category">Edge / SBC:</span> Raspberry Pi, Banana Pi, Jetson Nano, Docker on ARM, balenaOS, Nginx</div>
+          <div class="skill-item"><span class="skill-category">Backend:</span> Python (Django, FastAPI), Postgres, Redis, REST APIs</div>
+          <div class="skill-item"><span class="skill-category">Frontend:</span> Next.js, React, Angular</div>
+          <div class="skill-item"><span class="skill-category">DevOps / Infra:</span> Docker, Traefik, Nginx, Jenkins, GitHub Actions, Grafana, Prometheus</div>
+          <div class="skill-item"><span class="skill-category">Cloud:</span> AWS (EC2, IoT Core, Lambda), Azure (IoT Hub), GCP</div>
+          <div class="skill-item"><span class="skill-category">AI / ML:</span> IBM AI fundamentals – edge AI (Jetson Nano, computer vision)</div>
+          <div class="skill-item"><span class="skill-category">Industrial / Security:</span> Automated gates, garage doors, CCTV, access control, motor control</div>
+          <div class="skill-item"><span class="skill-category">OS / Tooling:</span> Linux (Debian/Ubuntu/ARM), Git, Bash</div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <h2>💼 Experience</h2>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">CTO & Founder</span>
+            <span class="exp-date">2024 – Present</span>
+          </div>
+          <div class="exp-header">
+            <span class="exp-company">Artilect Pty Ltd</span>
+            <span class="exp-location">South Africa (Remote)</span>
+          </div>
+          <ul>
+            <li>Provide high‑end engineering consulting, including test automation strategy, CI/CD pipeline design, and quality assurance for clients in IoT, cloud, and industrial automation.</li>
+            <li>Architect and implement automated test suites using Python, PyTest, and custom frameworks; integrate them into GitHub Actions and Jenkins pipelines.</li>
+            <li>Advise clients on test case management, reporting, and shift‑left testing practices.</li>
+            <li>Leverage personal hardware lab to rapidly prototype and validate end‑to‑end systems.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">DevSecOps Engineer</span>
+            <span class="exp-date">2020 – 2023</span>
+          </div>
+          <div class="exp-header">
+            <span class="exp-company">BCX (a Telkom company)</span>
+            <span class="exp-location">Remote / Hybrid</span>
+          </div>
+          <ul>
+            <li>Transitioned into DevSecOps following Telkom’s acquisition of BCX and closure of FastNet’s R&D division.</li>
+            <li>Designed CI/CD pipelines using GitHub Actions and Jenkins, embedding automated tests as quality gates.</li>
+            <li>Managed multi‑cloud infrastructure (AWS, Azure, GCP) with Infrastructure‑as‑Code principles.</li>
+            <li>Integrated security scanning, monitoring, and logging using Grafana and Prometheus.</li>
+            <li>Containerized applications with Docker and orchestrated reverse‑proxy configurations (Traefik, Nginx).</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Junior Architect (R&D)</span>
+            <span class="exp-date">2016 – 2020</span>
+          </div>
+          <div class="exp-header">
+            <span class="exp-company">FastNet (N&O Laboratory, later acquired by BCX/Telkom)</span>
+            <span class="exp-location">Cape Town, South Africa</span>
+          </div>
+          <ul>
+            <li>Started as WeThinkCode intern, progressed to Junior Architect contributing to system architecture for IoT and embedded solutions.</li>
+            <li>Designed end‑to‑end systems using STM32, ESP32, ARM platforms, and LoRa‑based telemetry.</li>
+            <li>Developed firmware in C for sensor networks and defined communication protocols (MQTT, LoRaWAN).</li>
+            <li>Built proof‑of‑concept demonstrations bridging hardware prototypes with Django backends and React dashboards.</li>
+            <li>Role concluded due to strategic restructuring; transitioned to DevSecOps within the broader organization.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Owner / Systems Integrator</span>
+            <span class="exp-date">2006 – 2016</span>
+          </div>
+          <div class="exp-header">
+            <span class="exp-company">Spiderdoors</span>
+            <span class="exp-location">Cape Town, South Africa</span>
+          </div>
+          <ul>
+            <li>Founded and operated a successful automation and security business – designed, installed, and maintained automated gates, garage doors, and CCTV systems.</li>
+            <li>Gained deep practical knowledge of physical automation, control systems, and on‑site troubleshooting.</li>
+            <li>Managed client acquisition, project management, technical installation, and after‑sales support.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Technician / Installer</span>
+            <span class="exp-date">2001 – 2006</span>
+          </div>
+          <div class="exp-header">
+            <span class="exp-company">EuropeDoors</span>
+            <span class="exp-location">Cape Town, South Africa</span>
+          </div>
+          <ul>
+            <li>Installed and serviced automated garage doors, gates, and industrial door systems.</li>
+            <li>Developed foundational expertise in motor control, wiring, and mechanical integration.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <h2>🎓 Education & Training</h2>
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">WeThinkCode</span>
+            <span class="exp-date">2016 – 2018</span>
+          </div>
+          <div class="exp-header">
+            <span class="exp-company">Intensive, peer‑led programming school</span>
+            <span class="exp-location">Johannesburg, South Africa</span>
+          </div>
+          <ul>
+            <li>Core curriculum: C, C++, Python, algorithms, data structures, system design, version control.</li>
+            <li>Emphasis on problem‑solving, collaboration, and self‑directed learning.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Additional Training</span>
+          </div>
+          <ul>
+            <li><strong>IBM AI Courses</strong> – Completed during BCX tenure. Self‑directed study covering foundational AI and machine learning concepts, applied to edge and embedded contexts.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Personal Lab / Projects -->
+      <section>
+        <h2>🔬 Personal Lab & Independent Projects</h2>
+        <ul>
+          <li><strong>Silicon‑to‑Cloud IoT Stack:</strong> ESP32 + LoRa sensors → MQTT → Django backend → React dashboard, fully containerized with Docker, reverse‑proxied with Traefik/Nginx on ARM Linux (Raspberry Pi / Banana Pi).</li>
+          <li><strong>Edge AI:</strong> Deployed computer vision models on Jetson Nano with Python, exposed via REST API on Nginx.</li>
+          <li><strong>Multi‑Cloud Automation:</strong> Automated infrastructure provisioning on AWS, Azure, and GCP using GitHub Actions and Terraform.</li>
+          <li><strong>Security Systems Prototyping:</strong> Experimental integration of CCTV systems with edge AI for motion detection and alerting.</li>
+        </ul>
+      </section>
+
+      <!-- Approach & Work Style -->
+      <section>
+        <h2>🧠 Approach & Work Style</h2>
+        <ul>
+          <li><strong>Entrepreneurial background:</strong> Built and ran a successful automation business for 10 years; understands client relationships, project management, and end‑to‑end accountability.</li>
+          <li><strong>Unique hybrid skillset:</strong> Combines practical industrial automation experience with modern software engineering and cloud architecture.</li>
+          <li><strong>Fully equipped home lab:</strong> Rapid prototyping, debugging, and testing across ARM, x86, and embedded platforms.</li>
+          <li><strong>Remote‑first mindset:</strong> Comfortable with asynchronous communication, Slack, Jira, Notion, and other collaboration tools.</li>
+          <li><strong>Pragmatic problem‑solver:</strong> Bridges physical systems, hardware constraints, and cloud scalability.</li>
+          <li><strong>Open to market‑related compensation:</strong> Focused on long‑term value contribution.</li>
+        </ul>
+      </section>
+
+      <blockquote>
+        <p>Thanks for visiting, see you again soon!</p>
+      </blockquote>
+    </main>
+    
+    <div id="loading"></div>
+
+    <script type="text/javascript">
+      const wait = (delay = 0) =>
+        new Promise(resolve => setTimeout(resolve, delay));
+
+      document.getElementById("main").style.display = "none";
+      document.getElementById("loading").style.display = "block";
+
+      function setVisible() {
+        document.getElementById("main").style.display = "grid";
+        document.getElementById("loading").style.display = "none";
+      }
+
+      document.addEventListener('DOMContentLoaded', () =>
+        wait(1000).then(() => {
+          setVisible();
+        }));
+    </script>
+    <script src="assets/js/top_function.js"></script>
+    <script type="module" src="assets/js/skybox.js"></script>
+  </body>
+</html>
